@@ -65,9 +65,7 @@ start_link(DcId) ->
     gen_server:start_link({local, dc_to_pool_name(DcId)}, ?MODULE, DcId, []).
 
 valid_dc_id(DcId) ->
-    is_integer(DcId) andalso
-        -10 < DcId andalso
-        10 > DcId.
+    is_integer(DcId).
 
 dc_to_pool_name(DcId)  ->
     valid_dc_id(DcId) orelse error(invalid_dc_id, [DcId]),
