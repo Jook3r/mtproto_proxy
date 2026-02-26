@@ -1,0 +1,465 @@
+
+=====
+===== LOGGING STARTED Tue Feb 24 01:04:00 -03 2026
+=====
+Exec: /home/centurion/root/dev/okvpn/mtproto_proxy/_build/prod/rel/mtp_proxy/erts-16.2/bin/erlexec -boot /home/centurion/root/dev/okvpn/mtproto_proxy/_build/prod/rel/mtp_proxy/releases/0.1.0/start -mode embedded -boot_var SYSTEM_LIB_DIR /home/centurion/root/dev/okvpn/mtproto_proxy/_build/prod/rel/mtp_proxy/lib -config /home/centurion/root/dev/okvpn/mtproto_proxy/_build/prod/rel/mtp_proxy/releases/0.1.0/sys.config -args_file /home/centurion/root/dev/okvpn/mtproto_proxy/_build/prod/rel/mtp_proxy/releases/0.1.0/vm.args -- console -config /home/centurion/root/dev/okvpn/mtproto_proxy/config/prod-sys.config --relx-disable-hooks
+Root: /home/centurion/root/dev/okvpn/mtproto_proxy/_build/prod/rel/mtp_proxy
+/home/centurion/root/dev/okvpn/mtproto_proxy/_build/prod/rel/mtp_proxy
+Erlang/OTP 28 [erts-16.2] [source] [64-bit] [smp:12:12] [ds:12:12:2] [async-threads:2] [jit:ns]
+
+2026-02-24T01:04:01.083755-03:00 info: Application: kernel. Started at: 'mtproto_proxy@45.166.128.246'.
+=PROGRESS REPORT==== 24-Feb-2026::01:04:01.083755 ===
+    application: kernel
+    started_at: 'mtproto_proxy@45.166.128.246'
+
+2026-02-24T01:04:01.083894-03:00 info: Application: stdlib. Started at: 'mtproto_proxy@45.166.128.246'.
+=PROGRESS REPORT==== 24-Feb-2026::01:04:01.083894 ===
+    application: stdlib
+    started_at: 'mtproto_proxy@45.166.128.246'
+
+2026-02-24T01:04:01.084049-03:00 info: Application: crypto. Started at: 'mtproto_proxy@45.166.128.246'.
+=PROGRESS REPORT==== 24-Feb-2026::01:04:01.084049 ===
+    application: crypto
+    started_at: 'mtproto_proxy@45.166.128.246'
+
+2026-02-24T01:04:01.084182-03:00 info: Application: asn1. Started at: 'mtproto_proxy@45.166.128.246'.
+=PROGRESS REPORT==== 24-Feb-2026::01:04:01.084182 ===
+    application: asn1
+    started_at: 'mtproto_proxy@45.166.128.246'
+
+2026-02-24T01:04:01.084310-03:00 info: Application: public_key. Started at: 'mtproto_proxy@45.166.128.246'.
+=PROGRESS REPORT==== 24-Feb-2026::01:04:01.084310 ===
+    application: public_key
+    started_at: 'mtproto_proxy@45.166.128.246'
+
+2026-02-24T01:04:01.084513-03:00 info: Supervisor: {local,ssl_admin_sup}. Started: id=ssl_pem_cache,pid=<0.634.0>.
+=PROGRESS REPORT==== 24-Feb-2026::01:04:01.084513 ===
+    supervisor: {local,ssl_admin_sup}
+    started: [{pid,<0.634.0>},
+              {id,ssl_pem_cache},
+              {mfargs,{ssl_pem_cache,start_link,[[]]}},
+              {restart_type,permanent},
+              {significant,false},
+              {shutdown,4000},
+              {child_type,worker}]
+
+2026-02-24T01:04:01.084639-03:00 info: Supervisor: {local,ssl_admin_sup}. Started: id=ssl_manager,pid=<0.635.0>.
+=PROGRESS REPORT==== 24-Feb-2026::01:04:01.084639 ===
+    supervisor: {local,ssl_admin_sup}
+    started: [{pid,<0.635.0>},
+              {id,ssl_manager},
+              {mfargs,{ssl_manager,start_link,[[]]}},
+              {restart_type,permanent},
+              {significant,false},
+              {shutdown,4000},
+              {child_type,worker}]
+
+2026-02-24T01:04:01.084715-03:00 info: Supervisor: {local,ssl_admin_sup}. Started: id=tls_client_ticket_store,pid=<0.636.0>.
+=PROGRESS REPORT==== 24-Feb-2026::01:04:01.084715 ===
+    supervisor: {local,ssl_admin_sup}
+    started: [{pid,<0.636.0>},
+              {id,tls_client_ticket_store},
+              {mfargs,{tls_client_ticket_store,start_link,[1000,7200]}},
+              {restart_type,permanent},
+              {significant,false},
+              {shutdown,4000},
+              {child_type,worker}]
+
+2026-02-24T01:04:01.084784-03:00 info: Supervisor: {local,ssl_sup}. Started: id=ssl_admin_sup,pid=<0.633.0>.
+=PROGRESS REPORT==== 24-Feb-2026::01:04:01.084784 ===
+    supervisor: {local,ssl_sup}
+    started: [{pid,<0.633.0>},
+              {id,ssl_admin_sup},
+              {mfargs,{ssl_admin_sup,start_link,[]}},
+              {restart_type,permanent},
+              {significant,false},
+              {shutdown,4000},
+              {child_type,supervisor}]
+
+2026-02-24T01:04:01.084889-03:00 info: Supervisor: {local,tls_sup}. Started: id=tls_connection_sup,pid=<0.639.0>.
+=PROGRESS REPORT==== 24-Feb-2026::01:04:01.084889 ===
+    supervisor: {local,tls_sup}
+    started: [{pid,<0.639.0>},
+              {id,tls_connection_sup},
+              {mfargs,{tls_connection_sup,start_link,[]}},
+              {restart_type,permanent},
+              {significant,false},
+              {shutdown,4000},
+              {child_type,supervisor}]
+
+2026-02-24T01:04:01.084985-03:00 info: Supervisor: {local,tls_server_sup}. Started: id=ssl_listen_tracker_sup,pid=<0.641.0>.
+=PROGRESS REPORT==== 24-Feb-2026::01:04:01.084985 ===
+    supervisor: {local,tls_server_sup}
+    started: [{pid,<0.641.0>},
+              {id,ssl_listen_tracker_sup},
+              {mfargs,{ssl_listen_tracker_sup,start_link,[]}},
+              {restart_type,permanent},
+              {significant,false},
+              {shutdown,4000},
+              {child_type,supervisor}]
+
+2026-02-24T01:04:01.085085-03:00 info: Supervisor: {local,tls_server_sup}. Started: id=tls_server_session_ticket,pid=<0.642.0>.
+=PROGRESS REPORT==== 24-Feb-2026::01:04:01.085085 ===
+    supervisor: {local,tls_server_sup}
+    started: [{pid,<0.642.0>},
+              {id,tls_server_session_ticket},
+              {mfargs,{tls_server_session_ticket_sup,start_link,[]}},
+              {restart_type,permanent},
+              {significant,false},
+              {shutdown,4000},
+              {child_type,supervisor}]
+
+2026-02-24T01:04:01.085164-03:00 info: Supervisor: {local,tls_server_sup}. Started: id=ssl_server_session_cache_sup,pid=<0.643.0>.
+=PROGRESS REPORT==== 24-Feb-2026::01:04:01.085164 ===
+    supervisor: {local,tls_server_sup}
+    started: [{pid,<0.643.0>},
+              {id,ssl_server_session_cache_sup},
+              {mfargs,{ssl_server_session_cache_sup,start_link,[]}},
+              {restart_type,permanent},
+              {significant,false},
+              {shutdown,4000},
+              {child_type,supervisor}]
+
+2026-02-24T01:04:01.085227-03:00 info: Supervisor: {local,tls_server_sup}. Started: id=ssl_upgrade_server_session_cache_sup,pid=<0.644.0>.
+=PROGRESS REPORT==== 24-Feb-2026::01:04:01.085227 ===
+    supervisor: {local,tls_server_sup}
+    started: [{pid,<0.644.0>},
+              {id,ssl_upgrade_server_session_cache_sup},
+              {mfargs,{ssl_upgrade_server_session_cache_sup,start_link,[]}},
+              {restart_type,permanent},
+              {significant,false},
+              {shutdown,4000},
+              {child_type,supervisor}]
+
+2026-02-24T01:04:01.085300-03:00 info: Supervisor: {local,tls_sup}. Started: id=tls_server_sup,pid=<0.640.0>.
+=PROGRESS REPORT==== 24-Feb-2026::01:04:01.085300 ===
+    supervisor: {local,tls_sup}
+    started: [{pid,<0.640.0>},
+              {id,tls_server_sup},
+              {mfargs,{tls_server_sup,start_link,[]}},
+              {restart_type,permanent},
+              {significant,false},
+              {shutdown,4000},
+              {child_type,supervisor}]
+
+2026-02-24T01:04:01.085371-03:00 info: Supervisor: {local,ssl_connection_sup}. Started: id=tls_sup,pid=<0.638.0>.
+=PROGRESS REPORT==== 24-Feb-2026::01:04:01.085371 ===
+    supervisor: {local,ssl_connection_sup}
+    started: [{pid,<0.638.0>},
+              {id,tls_sup},
+              {mfargs,{tls_sup,start_link,[]}},
+              {restart_type,permanent},
+              {significant,false},
+              {shutdown,4000},
+              {child_type,supervisor}]
+
+2026-02-24T01:04:01.085489-03:00 info: Supervisor: {local,dtls_sup}. Started: id=dtls_connection_sup,pid=<0.646.0>.
+=PROGRESS REPORT==== 24-Feb-2026::01:04:01.085489 ===
+    supervisor: {local,dtls_sup}
+    started: [{pid,<0.646.0>},
+              {id,dtls_connection_sup},
+              {mfargs,{dtls_connection_sup,start_link,[]}},
+              {restart_type,permanent},
+              {significant,false},
+              {shutdown,4000},
+              {child_type,supervisor}]
+
+2026-02-24T01:04:01.085620-03:00 info: Supervisor: {local,dtls_server_sup}. Started: id=dtls_listener_sup,pid=<0.648.0>.
+=PROGRESS REPORT==== 24-Feb-2026::01:04:01.085620 ===
+    supervisor: {local,dtls_server_sup}
+    started: [{pid,<0.648.0>},
+              {id,dtls_listener_sup},
+              {mfargs,{dtls_listener_sup,start_link,[]}},
+              {restart_type,permanent},
+              {significant,false},
+              {shutdown,4000},
+              {child_type,supervisor}]
+
+2026-02-24T01:04:01.085752-03:00 info: Supervisor: {local,dtls_server_sup}. Started: id=dtls_server_session_cache_sup,pid=<0.649.0>.
+=PROGRESS REPORT==== 24-Feb-2026::01:04:01.085752 ===
+    supervisor: {local,dtls_server_sup}
+    started: [{pid,<0.649.0>},
+              {id,dtls_server_session_cache_sup},
+              {mfargs,{dtls_server_session_cache_sup,start_link,[]}},
+              {restart_type,permanent},
+              {significant,false},
+              {shutdown,4000},
+              {child_type,supervisor}]
+
+2026-02-24T01:04:01.085871-03:00 info: Supervisor: {local,dtls_sup}. Started: id=dtls_server_sup,pid=<0.647.0>.
+=PROGRESS REPORT==== 24-Feb-2026::01:04:01.085871 ===
+    supervisor: {local,dtls_sup}
+    started: [{pid,<0.647.0>},
+              {id,dtls_server_sup},
+              {mfargs,{dtls_server_sup,start_link,[]}},
+              {restart_type,permanent},
+              {significant,false},
+              {shutdown,4000},
+              {child_type,supervisor}]
+
+2026-02-24T01:04:01.085982-03:00 info: Supervisor: {local,ssl_connection_sup}. Started: id=dtls_sup,pid=<0.645.0>.
+=PROGRESS REPORT==== 24-Feb-2026::01:04:01.085982 ===
+    supervisor: {local,ssl_connection_sup}
+    started: [{pid,<0.645.0>},
+              {id,dtls_sup},
+              {mfargs,{dtls_sup,start_link,[]}},
+              {restart_type,permanent},
+              {significant,false},
+              {shutdown,4000},
+              {child_type,supervisor}]
+
+2026-02-24T01:04:01.086092-03:00 info: Supervisor: {local,ssl_sup}. Started: id=ssl_connection_sup,pid=<0.637.0>.
+=PROGRESS REPORT==== 24-Feb-2026::01:04:01.086092 ===
+    supervisor: {local,ssl_sup}
+    started: [{pid,<0.637.0>},
+              {id,ssl_connection_sup},
+              {mfargs,{ssl_connection_sup,start_link,[]}},
+              {restart_type,permanent},
+              {significant,false},
+              {shutdown,4000},
+              {child_type,supervisor}]
+
+2026-02-24T01:04:01.086193-03:00 info: Application: ssl. Started at: 'mtproto_proxy@45.166.128.246'.
+=PROGRESS REPORT==== 24-Feb-2026::01:04:01.086193 ===
+    application: ssl
+    started_at: 'mtproto_proxy@45.166.128.246'
+
+2026-02-24T01:04:01.086347-03:00 info: Supervisor: {local,ranch_sup}. Started: id=ranch_server,pid=<0.653.0>.
+=PROGRESS REPORT==== 24-Feb-2026::01:04:01.086347 ===
+    supervisor: {local,ranch_sup}
+    started: [{pid,<0.653.0>},
+              {id,ranch_server},
+              {mfargs,{ranch_server,start_link,[]}},
+              {restart_type,permanent},
+              {significant,false},
+              {shutdown,5000},
+              {child_type,worker}]
+
+2026-02-24T01:04:01.086455-03:00 info: Application: ranch. Started at: 'mtproto_proxy@45.166.128.246'.
+=PROGRESS REPORT==== 24-Feb-2026::01:04:01.086455 ===
+    application: ranch
+    started_at: 'mtproto_proxy@45.166.128.246'
+
+=PROGRESS REPORT==== 24-Feb-2026::01:04:01.086542 ===
+    application: syntax_tools
+    started_at: 'mtproto_proxy@45.166.128.246'
+
+2026-02-24T01:04:01.086542-03:00 info: Application: syntax_tools. Started at: 'mtproto_proxy@45.166.128.246'.
+2026-02-24T01:04:01.086625-03:00 info: Application: compiler. Started at: 'mtproto_proxy@45.166.128.246'.
+=PROGRESS REPORT==== 24-Feb-2026::01:04:01.086625 ===
+    application: compiler
+    started_at: 'mtproto_proxy@45.166.128.246'
+
+2026-02-24T01:04:01.086725-03:00 info: Supervisor: {local,gr_sup}. Started: id=gr_counter_sup,pid=<0.657.0>.
+=PROGRESS REPORT==== 24-Feb-2026::01:04:01.086725 ===
+    supervisor: {local,gr_sup}
+    started: [{pid,<0.657.0>},
+              {id,gr_counter_sup},
+              {mfargs,{gr_counter_sup,start_link,[]}},
+              {restart_type,permanent},
+              {significant,false},
+              {shutdown,5000},
+              {child_type,supervisor}]
+
+2026-02-24T01:04:01.086841-03:00 info: Supervisor: {local,gr_sup}. Started: id=gr_param_sup,pid=<0.658.0>.
+=PROGRESS REPORT==== 24-Feb-2026::01:04:01.086841 ===
+    supervisor: {local,gr_sup}
+    started: [{pid,<0.658.0>},
+              {id,gr_param_sup},
+              {mfargs,{gr_param_sup,start_link,[]}},
+              {restart_type,permanent},
+              {significant,false},
+              {shutdown,5000},
+              {child_type,supervisor}]
+
+2026-02-24T01:04:01.086938-03:00 info: Supervisor: {local,gr_sup}. Started: id=gr_manager_sup,pid=<0.659.0>.
+=PROGRESS REPORT==== 24-Feb-2026::01:04:01.086938 ===
+    supervisor: {local,gr_sup}
+    started: [{pid,<0.659.0>},
+              {id,gr_manager_sup},
+              {mfargs,{gr_manager_sup,start_link,[]}},
+              {restart_type,permanent},
+              {significant,false},
+              {shutdown,5000},
+              {child_type,supervisor}]
+
+2026-02-24T01:04:01.087040-03:00 info: Application: goldrush. Started at: 'mtproto_proxy@45.166.128.246'.
+=PROGRESS REPORT==== 24-Feb-2026::01:04:01.087040 ===
+    application: goldrush
+    started_at: 'mtproto_proxy@45.166.128.246'
+
+2026-02-24T01:04:01.087230-03:00 info: Supervisor: {local,lager_sup}. Started: id=lager,pid=<0.663.0>.
+=PROGRESS REPORT==== 24-Feb-2026::01:04:01.087230 ===
+    supervisor: {local,lager_sup}
+    started: [{pid,<0.663.0>},
+              {id,lager},
+              {mfargs,{gen_event,start_link,[{local,lager_event}]}},
+              {restart_type,permanent},
+              {significant,false},
+              {shutdown,5000},
+              {child_type,worker}]
+
+2026-02-24T01:04:01.087352-03:00 info: Supervisor: {local,lager_sup}. Started: id=lager_handler_watcher_sup,pid=<0.664.0>.
+=PROGRESS REPORT==== 24-Feb-2026::01:04:01.087352 ===
+    supervisor: {local,lager_sup}
+    started: [{pid,<0.664.0>},
+              {id,lager_handler_watcher_sup},
+              {mfargs,{lager_handler_watcher_sup,start_link,[]}},
+              {restart_type,permanent},
+              {significant,false},
+              {shutdown,5000},
+              {child_type,supervisor}]
+
+2026-02-24T01:04:01.087581-03:00 info: Supervisor: {local,lager_sup}. Started: id=lager_crash_log,pid=<0.665.0>.
+=PROGRESS REPORT==== 24-Feb-2026::01:04:01.087581 ===
+    supervisor: {local,lager_sup}
+    started: [{pid,<0.665.0>},
+              {id,lager_crash_log},
+              {mfargs,
+                  {lager_crash_log,start_link,
+                      ["crash.log",65536,10485760,
+                       [{hour,0}],
+                       5,lager_rotator_default]}},
+              {restart_type,permanent},
+              {significant,false},
+              {shutdown,5000},
+              {child_type,worker}]
+
+2026-02-24T01:04:01.098486-03:00 info: Application: lager. Started at: 'mtproto_proxy@45.166.128.246'.
+01:04:01.098 [info] Application lager started on node 'mtproto_proxy@45.166.128.246'
+2026-02-24T01:04:01.098580-03:00 info: Application: erlang_psq. Started at: 'mtproto_proxy@45.166.128.246'.
+01:04:01.098 [info] Application erlang_psq started on node 'mtproto_proxy@45.166.128.246'
+2026-02-24T01:04:01.098723-03:00 info: Supervisor: {local,httpc_profile_sup}. Started: id=httpc_manager,pid=<0.691.0>.
+2026-02-24T01:04:01.098797-03:00 info: Supervisor: {local,httpc_sup}. Started: id=httpc_profile_sup,pid=<0.690.0>.
+2026-02-24T01:04:01.098857-03:00 info: Supervisor: {local,httpc_sup}. Started: id=httpc_handler_sup,pid=<0.692.0>.
+2026-02-24T01:04:01.098906-03:00 info: Supervisor: {local,inets_sup}. Started: id=httpc_sup,pid=<0.689.0>.
+2026-02-24T01:04:01.098975-03:00 info: Supervisor: {local,inets_sup}. Started: id=httpd_sup,pid=<0.693.0>.
+2026-02-24T01:04:01.099070-03:00 info: Application: inets. Started at: 'mtproto_proxy@45.166.128.246'.
+01:04:01.099 [info] Application inets started on node 'mtproto_proxy@45.166.128.246'
+2026-02-24T01:04:01.099149-03:00 info: Supervisor: {local,mtproto_proxy_sup}. Started: id=mtp_down_conn_sup,pid=<0.697.0>.
+2026-02-24T01:04:01.099197-03:00 info: Supervisor: {local,mtproto_proxy_sup}. Started: id=mtp_dc_pool_sup,pid=<0.698.0>.
+2026-02-24T01:04:01.112503-03:00 info: Supervisor: {local,inet_gethost_native_sup}. Started: pid=<0.702.0>,mfa={inet_gethost_native,init,[[]]}.
+2026-02-24T01:04:01.724702-03:00 info: Supervisor: {<0.704.0>,tls_dyn_connection_sup}. Started: id=sender,pid=<0.705.0>.
+2026-02-24T01:04:01.724896-03:00 info: Supervisor: {<0.704.0>,tls_dyn_connection_sup}. Started: id=receiver,pid=<0.706.0>.
+2026-02-24T01:04:02.366110-03:00 info: Supervisor: {local,mtproto_proxy_sup}. Started: id=mtp_config,pid=<0.699.0>.
+2026-02-24T01:04:02.366253-03:00 info: Supervisor: {local,mtproto_proxy_sup}. Started: id=mtp_session_storage,pid=<0.718.0>.
+2026-02-24T01:04:02.366321-03:00 info: Supervisor: {local,mtproto_proxy_sup}. Started: id=mtp_policy_table,pid=<0.719.0>.
+2026-02-24T01:04:02.366372-03:00 info: Supervisor: {local,mtproto_proxy_sup}. Started: id=mtp_policy_counter,pid=<0.720.0>.
++++++++++++++++++++++++++++++++++++++++
+Erlang MTProto proxy by @seriyps https://github.com/seriyps/mtproto_proxy
+Sponsored by and powers @socksy_bot
+
+2026-02-24T01:04:02.366455-03:00 info: +++++++++++++++++++++++++++++++++++++++, Erlang MTProto proxy by @seriyps https://github.com/seriyps/mtproto_proxy, Sponsored by and powers @socksy_bot
+2026-02-24T01:04:02.366574-03:00 info: Supervisor: {<0.721.0>,ranch_listener_sup}. Started: id=ranch_conns_sup,pid=<0.722.0>.
+2026-02-24T01:04:02.366818-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,1},pid=<0.724.0>.
+2026-02-24T01:04:02.366872-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,2},pid=<0.725.0>.
+2026-02-24T01:04:02.366931-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,3},pid=<0.726.0>.
+2026-02-24T01:04:02.366983-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,4},pid=<0.727.0>.
+2026-02-24T01:04:02.367022-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,5},pid=<0.728.0>.
+2026-02-24T01:04:02.367061-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,6},pid=<0.729.0>.
+2026-02-24T01:04:02.367095-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,7},pid=<0.730.0>.
+2026-02-24T01:04:02.367127-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,8},pid=<0.731.0>.
+2026-02-24T01:04:02.367162-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,9},pid=<0.732.0>.
+2026-02-24T01:04:02.367196-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,10},pid=<0.733.0>.
+2026-02-24T01:04:02.367231-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,11},pid=<0.734.0>.
+2026-02-24T01:04:02.367261-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,12},pid=<0.735.0>.
+2026-02-24T01:04:02.367303-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,13},pid=<0.736.0>.
+2026-02-24T01:04:02.367338-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,14},pid=<0.737.0>.
+2026-02-24T01:04:02.367374-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,15},pid=<0.738.0>.
+2026-02-24T01:04:02.367405-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,16},pid=<0.739.0>.
+2026-02-24T01:04:02.367440-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,17},pid=<0.740.0>.
+2026-02-24T01:04:02.367475-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,18},pid=<0.741.0>.
+2026-02-24T01:04:02.367510-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,19},pid=<0.742.0>.
+2026-02-24T01:04:02.367540-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,20},pid=<0.743.0>.
+2026-02-24T01:04:02.367570-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,21},pid=<0.744.0>.
+2026-02-24T01:04:02.367603-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,22},pid=<0.745.0>.
+2026-02-24T01:04:02.367636-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,23},pid=<0.746.0>.
+2026-02-24T01:04:02.367674-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,24},pid=<0.747.0>.
+2026-02-24T01:04:02.367710-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,25},pid=<0.748.0>.
+2026-02-24T01:04:02.367745-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,26},pid=<0.749.0>.
+2026-02-24T01:04:02.367776-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,27},pid=<0.750.0>.
+2026-02-24T01:04:02.367805-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,28},pid=<0.751.0>.
+2026-02-24T01:04:02.367841-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,29},pid=<0.752.0>.
+2026-02-24T01:04:02.367871-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,30},pid=<0.753.0>.
+2026-02-24T01:04:02.367905-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,31},pid=<0.754.0>.
+2026-02-24T01:04:02.367934-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,32},pid=<0.755.0>.
+2026-02-24T01:04:02.367970-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,33},pid=<0.756.0>.
+2026-02-24T01:04:02.368006-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,34},pid=<0.757.0>.
+2026-02-24T01:04:02.368039-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,35},pid=<0.758.0>.
+2026-02-24T01:04:02.368069-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,36},pid=<0.759.0>.
+2026-02-24T01:04:02.368099-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,37},pid=<0.760.0>.
+2026-02-24T01:04:02.368135-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,38},pid=<0.761.0>.
+2026-02-24T01:04:02.368165-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,39},pid=<0.762.0>.
+2026-02-24T01:04:02.368201-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,40},pid=<0.763.0>.
+2026-02-24T01:04:02.368236-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,41},pid=<0.764.0>.
+2026-02-24T01:04:02.368270-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,42},pid=<0.765.0>.
+2026-02-24T01:04:02.368331-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,43},pid=<0.766.0>.
+2026-02-24T01:04:02.368383-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,44},pid=<0.767.0>.
+2026-02-24T01:04:02.368419-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,45},pid=<0.768.0>.
+2026-02-24T01:04:02.368450-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,46},pid=<0.769.0>.
+2026-02-24T01:04:02.368514-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,47},pid=<0.770.0>.
+2026-02-24T01:04:02.368566-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,48},pid=<0.771.0>.
+2026-02-24T01:04:02.368638-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,49},pid=<0.772.0>.
+2026-02-24T01:04:02.368721-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,50},pid=<0.773.0>.
+2026-02-24T01:04:02.368767-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,51},pid=<0.774.0>.
+2026-02-24T01:04:02.368807-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,52},pid=<0.775.0>.
+2026-02-24T01:04:02.368842-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,53},pid=<0.776.0>.
+2026-02-24T01:04:02.368890-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,54},pid=<0.777.0>.
+2026-02-24T01:04:02.368930-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,55},pid=<0.778.0>.
+2026-02-24T01:04:02.368973-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,56},pid=<0.779.0>.
+2026-02-24T01:04:02.369026-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,57},pid=<0.780.0>.
+2026-02-24T01:04:02.369070-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,58},pid=<0.781.0>.
+2026-02-24T01:04:02.369113-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,59},pid=<0.782.0>.
+2026-02-24T01:04:02.369149-03:00 info: Supervisor: {<0.723.0>,ranch_acceptors_sup}. Started: id={acceptor,<0.723.0>,60},pid=<0.783.0>.
+2026-02-24T01:04:02.369210-03:00 info: Supervisor: {<0.721.0>,ranch_listener_sup}. Started: id=ranch_acceptors_sup,pid=<0.723.0>.
+Proxy started on 0.0.0.0:1443 with secret: d0d6e111bada5511fcce9584deadbeef, tag: dcbe8f1493fa4cd9ab300891c0b5b326
+Links: 
+https://t.me/proxy?server=45.166.128.246&port=1443&secret=eed0d6e111bada5511fcce9584deadbeef73332e616d617a6f6e6177732e636f6d
+https://t.me/proxy?server=45.166.128.246&port=1443&secret=ddd0d6e111bada5511fcce9584deadbeef
+https://t.me/proxy?server=45.166.128.246&port=1443&secret=d0d6e111bada5511fcce9584deadbeef
+2026-02-24T01:04:02.369357-03:00 info: Proxy started on 0.0.0.0:1443 with secret: d0d6e111bada5511fcce9584deadbeef, tag: dcbe8f1493fa4cd9ab300891c0b5b326, Links: , https://t.me/proxy?server=45.166.128.246&port=1443&secret=eed0d6e111bada5511fcce9584deadbeef73332e616d617a6f6e6177732e636f6d, https://t.me/proxy?server=45.166.128.246&port=1443&secret=ddd0d6e111bada5511fcce9584deadbeef, https://t.me/proxy?server=45.166.128.246&port=1443&secret=d0d6e111bada5511fcce9584deadbeef
+2026-02-24T01:04:02.369419-03:00 info: Application: mtproto_proxy. Started at: 'mtproto_proxy@45.166.128.246'.
+01:04:02.369 [info] Application mtproto_proxy started on node 'mtproto_proxy@45.166.128.246'
+2026-02-24T01:04:02.369509-03:00 info: Supervisor: {local,sasl_safe_sup}. Started: id=alarm_handler,pid=<0.788.0>.
+2026-02-24T01:04:02.369589-03:00 info: Supervisor: {local,sasl_sup}. Started: id=sasl_safe_sup,pid=<0.787.0>.
+2026-02-24T01:04:02.369918-03:00 info: Supervisor: {local,sasl_sup}. Started: id=release_handler,pid=<0.789.0>.
+01:04:02.369 [info] Application sasl started on node 'mtproto_proxy@45.166.128.246'
+2026-02-24T01:04:02.369976-03:00 info: Application: sasl. Started at: 'mtproto_proxy@45.166.128.246'.
+Eshell V16.2 (press Ctrl+G to abort, type help(). for help)
+(mtproto_proxy@45.166.128.246)1> [J2026-02-24T01:05:02.367266-03:00 info: storage cleaned: []; remaining: 0
+(mtproto_proxy@45.166.128.246)1> [J2026-02-24T01:06:02.369231-03:00 info: storage cleaned: []; remaining: 0
+(mtproto_proxy@45.166.128.246)1> [J2026-02-24T01:07:02.371251-03:00 info: storage cleaned: []; remaining: 0
+(mtproto_proxy@45.166.128.246)1> [J2026-02-24T01:08:02.373254-03:00 info: storage cleaned: []; remaining: 0
+(mtproto_proxy@45.166.128.246)1> [J2026-02-24T01:09:02.375244-03:00 info: storage cleaned: []; remaining: 0
+(mtproto_proxy@45.166.128.246)1> [J2026-02-24T01:10:02.377238-03:00 info: storage cleaned: []; remaining: 0
+(mtproto_proxy@45.166.128.246)1> [J2026-02-24T01:11:02.379243-03:00 info: storage cleaned: []; remaining: 0
+(mtproto_proxy@45.166.128.246)1> [J2026-02-24T01:12:02.381243-03:00 info: storage cleaned: []; remaining: 0
+(mtproto_proxy@45.166.128.246)1> [J2026-02-24T01:13:02.383256-03:00 info: storage cleaned: []; remaining: 0
+(mtproto_proxy@45.166.128.246)1> [J2026-02-24T01:14:02.385242-03:00 info: storage cleaned: []; remaining: 0
+(mtproto_proxy@45.166.128.246)1> [J2026-02-24T01:15:02.387240-03:00 info: storage cleaned: []; remaining: 0
+(mtproto_proxy@45.166.128.246)1> [J2026-02-24T01:16:02.389243-03:00 info: storage cleaned: []; remaining: 0
+(mtproto_proxy@45.166.128.246)1> [J2026-02-24T01:17:02.391244-03:00 info: storage cleaned: []; remaining: 0
+(mtproto_proxy@45.166.128.246)1> [J2026-02-24T01:18:02.393272-03:00 info: storage cleaned: []; remaining: 0
+(mtproto_proxy@45.166.128.246)1> 
+=====
+===== LOGGING STARTED Tue Feb 24 01:18:04 -03 2026
+=====
+Exec: /home/centurion/root/dev/okvpn/mtproto_proxy/_build/prod/rel/mtp_proxy/erts-16.2/bin/erlexec -boot /home/centurion/root/dev/okvpn/mtproto_proxy/_build/prod/rel/mtp_proxy/releases/0.1.0/start -mode embedded -boot_var SYSTEM_LIB_DIR /home/centurion/root/dev/okvpn/mtproto_proxy/_build/prod/rel/mtp_proxy/lib -config /home/centurion/root/dev/okvpn/mtproto_proxy/_build/prod/rel/mtp_proxy/releases/0.1.0/sys.config -args_file /home/centurion/root/dev/okvpn/mtproto_proxy/_build/prod/rel/mtp_proxy/releases/0.1.0/vm.args -- console -config /home/centurion/root/dev/okvpn/mtproto_proxy/config/prod-sys.config --relx-disable-hooks
+Root: /home/centurion/root/dev/okvpn/mtproto_proxy/_build/prod/rel/mtp_proxy
+/home/centurion/root/dev/okvpn/mtproto_proxy/_build/prod/rel/mtp_proxy
+Protocol 'inet_tcp': the name mtproto_proxy@127.0.0.1 seems to be in use by another Erlang node
+
+=====
+===== LOGGING STARTED Tue Feb 24 01:18:53 -03 2026
+=====
+Exec: /home/centurion/root/dev/okvpn/mtproto_proxy/_build/prod/rel/mtp_proxy/erts-16.2/bin/erlexec -boot /home/centurion/root/dev/okvpn/mtproto_proxy/_build/prod/rel/mtp_proxy/releases/0.1.0/start -mode embedded -boot_var SYSTEM_LIB_DIR /home/centurion/root/dev/okvpn/mtproto_proxy/_build/prod/rel/mtp_proxy/lib -config /home/centurion/root/dev/okvpn/mtproto_proxy/_build/prod/rel/mtp_proxy/releases/0.1.0/sys.config -args_file /home/centurion/root/dev/okvpn/mtproto_proxy/_build/prod/rel/mtp_proxy/releases/0.1.0/vm.args -- console -config /home/centurion/root/dev/okvpn/mtproto_proxy/config/prod-sys.config --relx-disable-hooks
+Root: /home/centurion/root/dev/okvpn/mtproto_proxy/_build/prod/rel/mtp_proxy
+/home/centurion/root/dev/okvpn/mtproto_proxy/_build/prod/rel/mtp_proxy
+Protocol 'inet_tcp': the name mtproto_proxy@127.0.0.1 seems to be in use by another Erlang node
+[J2026-02-24T01:19:02.395244-03:00 info: storage cleaned: []; remaining: 0
+(mtproto_proxy@45.166.128.246)1> [J2026-02-24T01:20:02.397244-03:00 info: storage cleaned: []; remaining: 0
+(mtproto_proxy@45.166.128.246)1> [J2026-02-24T01:20:02.667698-03:00 error: Supervisor: {local,gr_counter_sup}. Context: child_terminated. Reason: killed. Offender: id=gr_lager_default_tracer_counters,pid=<0.682.0>.
+(mtproto_proxy@45.166.128.246)1> [J2026-02-24T01:20:02.667704-03:00 error: Supervisor: {local,gr_param_sup}. Context: child_terminated. Reason: killed. Offender: id=gr_lager_default_tracer_params,pid=<0.681.0>.
+(mtproto_proxy@45.166.128.246)1> [J2026-02-24T01:20:02.667820-03:00 info: Supervisor: {local,gr_counter_sup}. Started: id=gr_lager_default_tracer_counters,pid=<0.817.0>.
+(mtproto_proxy@45.166.128.246)1> [J2026-02-24T01:20:02.667832-03:00 info: Supervisor: {local,gr_param_sup}. Started: id=gr_lager_default_tracer_params,pid=<0.818.0>.
+(mtproto_proxy@45.166.128.246)1> 

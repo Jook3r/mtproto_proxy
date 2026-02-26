@@ -1,0 +1,8 @@
+run_erl [75671] Tue Feb 24 01:18:53 2026
+Args before exec of shell:
+run_erl [75671] Tue Feb 24 01:18:53 2026
+argv[0] = sh
+run_erl [75671] Tue Feb 24 01:18:53 2026
+argv[1] = -c
+run_erl [75671] Tue Feb 24 01:18:53 2026
+argv[2] = exec "/home/centurion/root/dev/okvpn/mtproto_proxy/_build/prod/rel/mtp_proxy/bin/mtp_proxy" "console" '-config' '/home/centurion/root/dev/okvpn/mtproto_proxy/config/prod-sys.config'  --relx-disable-hooks
